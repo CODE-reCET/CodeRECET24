@@ -5,7 +5,7 @@
 ![Code ReCET BAnner](https://github.com/CODE-reCET/CodeRECET24/assets/154266304/08736571-0016-4aef-840d-94054de99db7)
 
 ## Team Name
-Nexus
+# Nexus
 ## Idea
 Breif Idea in two three sentences 
 
@@ -13,8 +13,8 @@ Breif Idea in two three sentences
 ###    improper disposal of medical waste can lead to deadly diseases such as gastroenteric, respiratory, ocular, skin infections, and more. To combat this pressing issue, our team has developed a smart solution - the Smart Bins Web App.
 
 ### The problem of bio medical waste dumping can be effectively prevented with our innovative solution
-## - smart bins with sensors.
-### Our innovative web app provides a comprehensive solution to the problem of biomedical waste management
+- smart bins with sensors.
+
 ## Features 
 1. Recognition of Public Health Threat
 2. Bin tracking System
@@ -34,8 +34,9 @@ will be added shortly...
 
 ## How to configure
 Instructions for setting up 
-## Clone the repository
-## run npm i 
+>> Clone the repository
+>> run npm i (in terminal)
+>> 
 
 
 ## How to Run
