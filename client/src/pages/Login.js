@@ -1,9 +1,4 @@
-import React from 'react'
-
-function Login() {
-  return (
-    <div>
-      import React, { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 const Login = ({ history }) => {
@@ -45,8 +40,3 @@ const Login = ({ history }) => {
 };
 
 export default Login;
-    </div>
-  )
-}
-
-export default Login
