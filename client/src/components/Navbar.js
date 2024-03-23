@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import './navbar.css'; // Import your CSS file
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "./navbar.css"; // Import your CSS file
+import { Link } from "react-router-dom";
 
 const Navbare = () => {
   const [showNavLinks, setShowNavLinks] = useState(false);
@@ -12,10 +12,10 @@ const Navbare = () => {
     };
 
     handleResize(); // Check initial view
-    window.addEventListener('resize', handleResize);
+    window.addEventListener("resize", handleResize);
 
     return () => {
-      window.removeEventListener('resize', handleResize);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
   const toggleNavLinks = (event) => {
@@ -31,13 +31,23 @@ const Navbare = () => {
         <span className="bar"></span>
         <span className="bar"></span>
       </a>
-      <div className={`navbar-links ${showNavLinks ? 'active' : ''}`}>
-        <ul style={{gap: isMobileView ? '50px' : '60px'}}>
-          <li><Link to="/home" >Home</Link></li>
-          <li><Link to="/resources" >Resources</Link></li>
-          <li><Link to="/events">Events</Link></li>
-          <li><Link to="/aboutus" >About Us</Link></li>
-          <li><Link to="/contactus" >Contact Us</Link></li>
+      <div className={`navbar-links ${showNavLinks ? "active" : ""}`}>
+        <ul style={{ gap: isMobileView ? "50px" : "60px" }}>
+          <li>
+            <Link to="/home">Home</Link>
+          </li>
+          <li>
+            <Link to="/resources">Resources</Link>
+          </li>
+          <li>
+            <Link to="/events">Community</Link>
+          </li>
+          <li>
+            <Link to="/aboutus">About Us</Link>
+          </li>
+          <li>
+            <Link to="/contactus">Contact Us</Link>
+          </li>
         </ul>
       </div>
     </nav>
