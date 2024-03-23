@@ -1,6 +1,7 @@
 // Login.jsx
 import React, { useState } from 'react';
 import './Login.css';
+import Navbar from '../../components/Navbar';
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -12,6 +13,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="login-container">
       <div className="form-container">
         <form onSubmit={handleSubmit}>
@@ -37,6 +40,7 @@ const Login = () => {
         <a href="/forgot-password" className="link">Forgot Password?</a>
       </div>
     </div>
+    </>
   );
 };
 
