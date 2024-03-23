@@ -11,7 +11,6 @@ function Home() {
       <Navbar />
       <FirstC />
       <MapComponent />
-      <BinTrackingDashboard />
     </>
   );
 }

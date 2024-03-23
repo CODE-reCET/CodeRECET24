@@ -10,22 +10,23 @@ import Community from './pages/community/Community';
 import {
   createBrowserRouter,
   RouterProvider,
- } from "react-router-dom";
-  
- const router = createBrowserRouter([
-   {
+} from "react-router-dom";
+import About from './pages/about/Ab';
+
+const router = createBrowserRouter([
+  {
     path: "/",
     element: <Login />,
-   },
-   {
-     path: "/App",
-     element: <App />,
-   },
-   {
+  },
+  {
+    path: "/App",
+    element: <App />,
+  },
+  {
     path: "/home",
     element: <Home />,
-   },
-   {
+  },
+  {
     path: "/resources",
     element: <Resources />,
   },
@@ -33,9 +34,13 @@ import {
     path: "/community",
     element: <Community />,
   },
-   
- ]);
-  
+  {
+    path: "/aboutus",
+    element: <About />,
+  },
+
+]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
