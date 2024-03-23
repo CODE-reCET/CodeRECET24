@@ -1,7 +1,11 @@
 // Login.jsx
 import React, { useState } from 'react';
 import './Login.css';
+<<<<<<< HEAD
 import logoGif from '../../assets/Logo.gif'; // Adjust the path to Logo.gif
+=======
+import Navbar from '../../components/Navbar';
+>>>>>>> f63f85eb3e66108e162e5da53fbc1e0371cdf4ce
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -13,6 +17,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    <Navbar />
     <div className="login-container">
       <div className="sec1">
         <img src={logoGif} alt="Logo" className="logo" /> {/* Add the GIF as logo */}
@@ -43,6 +49,7 @@ const Login = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };
 

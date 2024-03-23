@@ -1,0 +1,20 @@
+.navbar {
+    background-color: #fff; /* Navbar background color */
+  }
+  
+  .navbar-brand {
+    color: #333; /* Navbar brand text color */
+  }
+  
+  .navbar-nav .nav-item .nav-link {
+    color: #333; /* Navbar link text color */
+  }
+  
+  .navbar-nav .nav-item .nav-link.active {
+    color: #007bff; /* Active navbar link text color */
+  }
+  
+  .navbar-nav .nav-item .nav-link.disabled {
+    color: #6c757d; /* Disabled navbar link text color */
+  }
+  
