@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import Login from './pages/login/Login';
+import Home from './pages/home/Home';
 
 import {
   createBrowserRouter,
@@ -15,9 +16,12 @@ import {
     element: <Login />,
    },
    {
-     path: "/home",
+     path: "/App",
      element: <App />,
-   },
+   },{
+    path: "/home",
+    element: <Home />,
+  },
    
  ]);
   
