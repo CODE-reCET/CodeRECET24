@@ -1,0 +1,23 @@
+/* Membership.css */
+
+.membership-status {
+  display: flex;
+  align-items: center;
+}
+
+/* Membership.css */
+
+.thumbnail-container {
+  flex: 0 0 auto; /* Prevent the thumbnail from growing */
+  margin-right: 20px; /* Adjust as needed */
+}
+
+.thumbnail {
+  width: 200px; /* Increase the width of the thumbnail */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.membership-details {
+  flex: 1; /* Allow the membership details to grow */
+}
+
