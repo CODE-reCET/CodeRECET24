@@ -14,7 +14,7 @@ Breif Idea in two three sentences
 
 # The problem of bio medical waste dumping can be effectively prevented with our innovative solution - 
    smart bins with sensors.
-Our innovative web app provides a comprehensive solution to the problem of biomedical waste management
+# Our innovative web app provides a comprehensive solution to the problem of biomedical waste management
 ## Features 
 1. Recognition of Public Health Threat
 2. Bin tracking System
@@ -23,18 +23,19 @@ Our innovative web app provides a comprehensive solution to the problem of biome
 
 ## Link to product walkthrough
 [link to video](Link Here)
-
+will be added shortly...
    
 ## Libraries used
 Library Name - Version
-react - 18.2
-firebase - 10.9.0
-googlemaps react - 2.0.6
-bootstrap - 2.10.2 
-
+React - 18.2
+Firebase - 10.9.0
+GoogleMaps react - 2.0.6
+Bootstrap - 2.10.2 
 
 ## How to configure
 Instructions for setting up 
+## Clone the repository
+## run npm i 
 
 
 ## How to Run
