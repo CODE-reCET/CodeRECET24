@@ -9,11 +9,10 @@
 ## Idea
 Breif Idea in two three sentences 
 
-### In today's world, the dumping of biomedical waste poses a significant threat to public health. The 
-###    improper disposal of medical waste can lead to deadly diseases such as gastroenteric, respiratory, ocular, skin infections, and more. To combat this pressing issue, our team has developed a smart solution - the Smart Bins Web App.
-
+### In today's world, the dumping of biomedical waste poses a significant threat to public health.
+### The improper disposal of medical waste can lead to deadly diseases such as gastroenteric, respiratory, ocular, skin infections, and more. To combat this pressing issue, our team has developed a smart solution - the Smart Bins Web App.
 ### The problem of bio medical waste dumping can be effectively prevented with our innovative solution
-- smart bins with sensors.
+### - smart bins with sensors.
 
 ## Features 
 1. Recognition of Public Health Threat
@@ -34,13 +33,17 @@ will be added shortly...
 
 ## How to configure
 Instructions for setting up 
->> Clone the repository
->> run npm i (in terminal)
->> 
+* Clone the repository
+* run npm i (in terminal)
+* run 
 
 
 ## How to Run
 Instructions for running
+* Open project folder in VS Code or any preferred
+* Make sure you have NodeJS installed
+* Run "npm start" from terminal
+* An open browser window should automatically open if not click on localhost:3000
 
 ## How to contribute ? 
 Features to implement 
