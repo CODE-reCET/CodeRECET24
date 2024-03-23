@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
+import Resources from './pages/resources/Resources';
 
 import {
   createBrowserRouter,
@@ -18,9 +19,14 @@ import {
    {
      path: "/App",
      element: <App />,
-   },{
+   },
+   {
     path: "/home",
     element: <Home />,
+   },
+   {
+    path: "/resources",
+    element: <Resources />,
   },
    
  ]);
