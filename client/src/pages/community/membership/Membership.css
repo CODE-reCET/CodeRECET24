@@ -1,15 +1,23 @@
-/* Add this to your CSS file */
 /* Membership.css */
 
 .membership-status {
-  text-align: left;
-  margin-right: auto; /* This will push the card to the left side of the container */
-  margin-left: 0; /* Reset the left margin */
+  display: flex;
+  align-items: center;
 }
 
-.donation-card {
-  text-align: left;
-  margin-right: auto;
-  margin-left: 0;
-  margin-top: 35px; /* Adjust the spacing between the two cards */
+/* Membership.css */
+
+.thumbnail-container {
+  flex: 0 0 auto; /* Prevent the thumbnail from growing */
+  margin-right: 20px; /* Adjust as needed */
 }
+
+.thumbnail {
+  width: 200px; /* Increase the width of the thumbnail */
+  height: auto; /* Maintain aspect ratio */
+}
+
+.membership-details {
+  flex: 1; /* Allow the membership details to grow */
+}
+
