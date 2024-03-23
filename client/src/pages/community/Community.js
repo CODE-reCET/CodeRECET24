@@ -6,7 +6,9 @@ function Community() {
   return (
     <>
       <Navbare />
-      <MembershipStatus />
+      <div className="container d-flex mt-5 justify-content-center">
+        <MembershipStatus />
+      </div>
     </>
   );
 }
