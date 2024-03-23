@@ -1,9 +1,8 @@
 import React from "react";
-import { Ab } from "./Ab.js";
 import Navbare from "../../components/Navbar.js";
 import BinTrackingDashboard from "../BinTracking/BinTrack.js";
 
-function About() {
+function Bin() {
   return (
     <>
       <Navbare />
@@ -12,4 +11,4 @@ function About() {
   );
 }
 
-export default About;
+export default Bin;

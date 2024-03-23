@@ -6,12 +6,12 @@ import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import Resources from './pages/resources/Resources';
 import Community from './pages/community/Community';
+import Bin from './pages/about/About';
 
 import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import About from './pages/about/Ab';
 
 const router = createBrowserRouter([
   {
@@ -35,8 +35,8 @@ const router = createBrowserRouter([
     element: <Community />,
   },
   {
-    path: "/aboutus",
-    element: <About />,
+    path: "/bin",
+    element: <Bin />,
   },
 
 ]);
