@@ -6,7 +6,10 @@ const MembershipStatus = ({ isMembershipActive, setMembershipActive }) => {
   return (
     <div>
       <h2>Membership Status</h2>
-      <p>Your membership is currently {isMembershipActive ? "active" : "inactive"}.</p>
+      <p>
+        Your membership is currently{" "}
+        {isMembershipActive ? "active" : "inactive"}.
+      </p>
       <button
         className="btn btn-primary"
         onClick={() => setMembershipActive(!isMembershipActive)}

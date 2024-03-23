@@ -5,6 +5,7 @@ import App from './App';
 import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import Resources from './pages/resources/Resources';
+import Community from './pages/community/Community';
 
 import {
   createBrowserRouter,
@@ -27,6 +28,10 @@ import {
    {
     path: "/resources",
     element: <Resources />,
+  },
+  {
+    path: "/community",
+    element: <Community />,
   },
    
  ]);
