@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-import "./styles.css"; // Import CSS file for styling
+import "./MapComponent.css"; // Import CSS file for styling
 
 class MapComponent extends Component {
   render() {
