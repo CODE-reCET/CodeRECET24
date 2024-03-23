@@ -33,11 +33,11 @@ const Navbare = () => {
       </a>
       <div className={`navbar-links ${showNavLinks ? 'active' : ''}`}>
         <ul style={{gap: isMobileView ? '50px' : '60px'}}>
-          <li><Link to="/" >Home</Link></li>
+          <li><Link to="/home" >Home</Link></li>
           <li><Link to="/resources" >Resources</Link></li>
           <li><Link to="/events">Events</Link></li>
           <li><Link to="/aboutus" >About Us</Link></li>
-          <li><Link to="/contactus" className="btn btncolor" >Contact Us</Link></li>
+          <li><Link to="/contactus" >Contact Us</Link></li>
         </ul>
       </div>
     </nav>

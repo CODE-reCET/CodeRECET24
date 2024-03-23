@@ -15,7 +15,6 @@ const Login = () => {
 
   return (
     <>
-    <Navbar />
     <div className="login-container">
       <div className="sec1">
         <img src={logoGif} alt="Logo" className="logo" /> {/* Add the GIF as logo */}
