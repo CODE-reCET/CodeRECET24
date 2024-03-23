@@ -17,11 +17,11 @@
   /* ecards.css or your relevant CSS file */
   .registerButton1 {
     transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
-    background-color: black; /* Initial background color */
+    background-color: #D9EDBF !important;
     color: white; /* Initial text color */
   }
   
   .registerButton1:hover {
-    background-color: #7879e6 !important; /* Change to your desired hover background color */
+    background-color: #a5b98a !important; /* Change to your desired hover background color */
     color: black; /* Change to your desired hover text color */
   }

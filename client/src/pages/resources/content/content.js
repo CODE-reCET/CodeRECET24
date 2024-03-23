@@ -1,27 +1,27 @@
 export const contents1 = {
   card_1: {
-    title: "Card Title",
+    title: "Importance of BMWM",
     tags: "medicine",
     imageUrl: "./biom.jpeg",
-    description: "Fundamentals of version control.",
+    description: "Impact of improper management Biohazardal wastes in society",
   },
   card_2: {
-    title: "Card Title",
+    title: "Importance of BMWM",
     tags: "medicine",
-    imageUrl: "./dim.png",
-    description: "Fundamentals of version control.",
+    imageUrl: "./biom.jpeg",
+    description: "Impact of improper management Biohazardal wastes in society",
   },
   card_3: {
-    title: "Card Title",
+    title: "Importance of BMWM",
     tags: "medicine",
     imageUrl: "./biom.jpeg",
-    description: "Fundamentals of version control.",
+    description: "Impact of improper management Biohazardal wastes in society",
   },
   card_4: {
-    title: "Card Title",
+    title: "Importance of BMWM",
     tags: "medicine",
     imageUrl: "./biom.jpeg",
-    description: "Fundamentals of version control.",
+    description: "Impact of improper management Biohazardal wastes in society",
   },
 };
 
