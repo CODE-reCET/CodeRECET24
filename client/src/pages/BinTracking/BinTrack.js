@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { initializeApp } from "firebase/app";
 import { getDatabase, ref, onValue, off } from "firebase/database";
+import "./bintrack.css";
 
 const firebaseConfig = {
   apiKey: "AIzaSyAJ05WTJ4x7pQdFnsWHyomXENf0h15hIJc",
@@ -51,17 +52,20 @@ const BinTrackingDashboard = () => {
   }, []); // Empty dependency array to run the effect only once
 
   return (
-    <div>
+    <div className="bin-tracking-dashboard">
       <h2>Bin Tracking Dashboard</h2>
       <div>
         {bins.length === 0 ? (
           <p>No bins found</p>
         ) : (
-          <ul>
+          <ul className="bin-list">
             {bins.map((bin) => (
-              <li key={bin.id}>
-                Bin ID: {bin.id}, Latitude: {bin.latitudeData}, Longitude:{" "}
-                {bin.longitudeData}
+              <li key={bin.id} className="bin-item">
+                <span className="bin-id">Bin ID: {bin.id}</span>
+                <span className="latitude">Latitude: {bin.latitudeData}</span>
+                <span className="longitude">
+                  Longitude: {bin.longitudeData}
+                </span>
               </li>
             ))}
           </ul>
