@@ -1,0 +1,77 @@
+#include <LiquidCrystal.h>
+#include <Servo.h>
+
+const int pirsensorPin = 2;
+const int ultrasonicTrigPin = 3;
+const int ultrasonicEchoPin = 4;
+const int servoPin = 9;
+
+LiquidCrystal lcd(A5, A4, A3, A2, A1, A0);
+Servo lidServo;
+
+const int boxHeight = 200; 
+const int maxGarbageCapacity = boxHeight * 100 * 100;
+int currentGarbageLevel = 0;
+bool isLidOpen = false;
+
+void setup() {
+  lcd.print("Smart Dustbin");
+  delay(1000);
+  pinMode(pirsensorPin, INPUT);
+  pinMode(ultrasonicTrigPin, OUTPUT);
+  pinMode(ultrasonicEchoPin, INPUT);
+  lidServo.attach(servoPin);
+  lcd.begin(16, 2);
+  lcd.print("Smart Dustbin");
+}
+
+void loop() {
+  int pirSensorValue = digitalRead(pirsensorPin);
+  int ultrasonicDistance = getUltrasonicDistance();
+
+  if (pirSensorValue == HIGH && !isLidOpen) {
+    openLid();
+    delay(5000);
+  }
+  
+  if (pirSensorValue == LOW && isLidOpen) {
+    closeLid();
+    delay(5000);
+  }
+
+  // Calculate fill percentage based on ultrasonic distance
+  int fillPercentage = map(ultrasonicDistance, 0, boxHeight, 0, 100);
+
+  lcd.setCursor(0, 0);
+  lcd.print("Fill Level: ");
+  lcd.print(fillPercentage);
+  lcd.print("% ");
+  lcd.setCursor(0, 1);
+  lcd.print("Distance: ");
+  lcd.print(ultrasonicDistance);
+  lcd.print(" cm ");
+  delay(1000);
+}
+
+void openLid() {
+  lidServo.write(90);
+  isLidOpen = true;
+}
+
+void closeLid() {
+  lidServo.write(0);
+  isLidOpen = false;
+}
+
+int getUltrasonicDistance() {
+  digitalWrite(ultrasonicTrigPin, LOW);
+  delayMicroseconds(2);
+  digitalWrite(ultrasonicTrigPin, HIGH);
+  delayMicroseconds(10);
+  digitalWrite(ultrasonicTrigPin, LOW);
+
+  long duration = pulseIn(ultrasonicEchoPin, HIGH);
+  int distance = duration * 0.034 / 2;
+  
+  return distance;
+}
