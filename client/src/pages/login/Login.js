@@ -1,24 +1,37 @@
-// Login.jsx
 import React, { useState } from "react";
+import { getAuth, signInWithEmailAndPassword } from "firebase/auth"; // Import signInWithEmailAndPassword function from Firebase Auth
+import { auth } from "../../firebase"; // Import Firebase auth instance
 import "./Login.css";
-import logoGif from "../../assets/Logo.gif"; // Adjust the path to Logo.gif
-import Navbar from "../../components/Navbar";
+import logoGif from "../../assets/Logo.gif";
+import { useNavigate } from "react-router-dom"; // Import useNavigate
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [error, setError] = useState(null); // Define error state
+  const navigate = useNavigate(); // Get the navigate function
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // handle login logic here
+
+    // Inside handleSubmit function
+    try {
+      // Sign in user with email and password
+      await signInWithEmailAndPassword(auth, email, password);
+
+      // Redirect user to the home page
+      navigate("/home");
+    } catch (error) {
+      console.error("Error signing in:", error.message);
+      setError(error.message); // Update error state
+    }
   };
 
   return (
     <>
       <div className="login-container">
         <div className="sec1">
-          <img src={logoGif} alt="Logo" className="logo" />{" "}
-          {/* Add the GIF as logo */}
+          <img src={logoGif} alt="Logo" className="logo" />
         </div>
         <div className="sec2">
           <div className="form-container">
@@ -37,6 +50,7 @@ const Login = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              {error && <p className="error-message">{error}</p>}
               <button type="submit" className="btnn4">
                 Login
               </button>
