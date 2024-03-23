@@ -27,17 +27,11 @@ const MembershipStatus = ({ isMembershipActive, setMembershipActive }) => {
           </button>
         </div>
       </div>
-
-      {/* Donation Card */}
-      <div className="donation-card">
-        <h2>Support Our Community</h2>
-        <p>
-          Help us strengthen our community by making a donation. Your support allows us to continue providing valuable resources and services to our members.
-        </p>
-        <button className="btn btn-primary">Donate</button>
-      </div>
-    </div>
+    </div> 
   );
 };
 
+
+
 export default MembershipStatus;
+
