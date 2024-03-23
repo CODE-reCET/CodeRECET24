@@ -14,7 +14,7 @@ const MembershipStatus = ({ isMembershipActive, setMembershipActive }) => {
         className="btn btn-primary"
         onClick={() => setMembershipActive(!isMembershipActive)}
       >
-        {isMembershipActive ? "Deactivate Membership" : "Activate Membership"}
+        {isMembershipActive ? "Deactivate Membership" : "Renew Membership"}
       </button>
     </div>
   );
