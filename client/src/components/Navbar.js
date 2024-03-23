@@ -1,40 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import './navbar.css'; // Import your CSS file
+import { Link } from 'react-router-dom';
 
-function Navbar() {
+const Navbare = () => {
+  const [showNavLinks, setShowNavLinks] = useState(false);
+  const [isMobileView, setIsMobileView] = useState(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileView(window.innerWidth <= 950); // Adjust the breakpoint as needed
+    };
+
+    handleResize(); // Check initial view
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+  const toggleNavLinks = (event) => {
+    event.preventDefault(); // Prevent immediate navigation
+    setShowNavLinks(!showNavLinks);
+  };
+
   return (
-    <nav className="navbar navbar-expand-lg navbar-light bg-light">
-      <div className="container">
-        <a className="navbar-brand" href="/">My Awesome Navbar</a>
-        <button
-          className="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span className="navbar-toggler-icon" />
-        </button>
-        <div className="collapse navbar-collapse" id="navbarNav">
-          <ul className="navbar-nav ms-auto">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">Home</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">Features</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="/">Pricing</a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" href="/" tabIndex={-1} aria-disabled="true">Disabled</a>
-            </li>
-          </ul>
-        </div>
+    <nav className="navbar">
+      <div className="brand-title">EarthBin</div>
+      <a href="/" className="toggle-button" onClick={toggleNavLinks}>
+        <span className="bar"></span>
+        <span className="bar"></span>
+        <span className="bar"></span>
+      </a>
+      <div className={`navbar-links ${showNavLinks ? 'active' : ''}`}>
+        <ul style={{gap: isMobileView ? '50px' : '60px'}}>
+          <li><Link to="/" >Home</Link></li>
+          <li><Link to="/resources" >Resources</Link></li>
+          <li><Link to="/events">Events</Link></li>
+          <li><Link to="/aboutus" >About Us</Link></li>
+          <li><Link to="/contactus" className="btn btncolor" >Contact Us</Link></li>
+        </ul>
       </div>
     </nav>
   );
-}
+};
 
-export default Navbar;
+export default Navbare;
