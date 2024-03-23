@@ -25,8 +25,7 @@ function FirstC() {
                 for Biomedical waste disposal
               </h1>
               <p className="fs-4 mb-5">
-                Our methods are straight, comfortable, and established to ensure
-                evolution and acceleration.
+                "Stay safe from infections by using our innovative web app solution."
               </p>
               <div className="d-grid gap-2 d-sm-flex">
                 <button
