@@ -7,7 +7,7 @@ function FirstC() {
     <div className="container">
       <section
         id="scrollspyHero"
-        className="bsb-hero-2 bsb-tpl-bg-blue py-5 py-xl-8 py-xxl-10"
+        className="fcm bsb-hero-2 bsb-tpl-bg-blue py-5 py-xl-8 py-xxl-10"
       >
         <div className="container overflow-hidden">
           <div className="row gy-3 gy-lg-0 align-items-lg-center justify-content-lg-between">

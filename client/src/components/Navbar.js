@@ -40,7 +40,7 @@ const Navbare = () => {
             <Link to="/resources">Resources</Link>
           </li>
           <li>
-            <Link to="/community">Community</Link>
+            <Link to="/community">Membership</Link>
           </li>
           <li>
             <Link to="/aboutus">About Us</Link>
