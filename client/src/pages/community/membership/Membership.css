@@ -1,0 +1,15 @@
+/* Add this to your CSS file */
+/* Membership.css */
+
+.membership-status {
+  text-align: left;
+  margin-right: auto; /* This will push the card to the left side of the container */
+  margin-left: 0; /* Reset the left margin */
+}
+
+.donation-card {
+  text-align: left;
+  margin-right: auto;
+  margin-left: 0;
+  margin-top: 35px; /* Adjust the spacing between the two cards */
+}
