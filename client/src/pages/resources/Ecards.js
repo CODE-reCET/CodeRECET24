@@ -8,13 +8,14 @@ function ECards() {
   const cardKeys = Object.keys(contents1);
 
   const cardComponents = cardKeys.map((cardKey) => {
-    const { title, tags, description } = contents1[cardKey]; // Assuming tags is an array of strings
+    const { title, tags, description, imageUrl } = contents1[cardKey]; // Assuming imageUrl is the URL of the image
 
     return (
       <div key={cardKey} className="col-md-4 mb-4">
-        {" "}
         {/* Bootstrap's col-md-4 sets 3 cards per row on medium devices */}
         <Card>
+          {/* Include the image */}
+          <Card.Img variant="top" src={imageUrl} />
           <Card.Body>
             <div
               style={{
