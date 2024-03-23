@@ -10,6 +10,7 @@ const firebaseConfig = {
   messagingSenderId: "882416356913",
   appId: "1:882416356913:web:4a1c9e6bca1ce73b91cf10",
   measurementId: "G-M50VZWDN1T",
+  databaseURL: "https://bmw3-1bdc7-default-rtdb.firebaseio.com",
 };
 
 // Initialize Firebase

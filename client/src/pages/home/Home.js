@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import FirstC from "./FirstC";
 import MapComponent from "../map/MapComponent";
+import BinTrackingDashboard from "../BinTracking/BinTrack";
 
 function Home() {
   return (
@@ -10,6 +11,7 @@ function Home() {
       <Navbar />
       <FirstC />
       <MapComponent />
+      <BinTrackingDashboard />
     </>
   );
 }
