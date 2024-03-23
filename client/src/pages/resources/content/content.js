@@ -1,18 +1,26 @@
 export const contents1 = {
   card_1: {
     title: "Card Title",
+    tags: "medicine",
+    imageUrl: "./biom.jpeg",
     description: "Fundamentals of version control.",
   },
   card_2: {
     title: "Card Title",
+    tags: "medicine",
+    imageUrl: "./dim.png",
     description: "Fundamentals of version control.",
   },
   card_3: {
     title: "Card Title",
+    tags: "medicine",
+    imageUrl: "./biom.jpeg",
     description: "Fundamentals of version control.",
   },
   card_4: {
     title: "Card Title",
+    tags: "medicine",
+    imageUrl: "./biom.jpeg",
     description: "Fundamentals of version control.",
   },
 };
