@@ -26,11 +26,11 @@ Breif Idea in two three sentences
 will be added shortly...
    
 ## Libraries used
-Library Name - Version
-React - 18.2
-Firebase - 10.9.0
-GoogleMaps react - 2.0.6
-Bootstrap - 2.10.2 
+* Library Name - Version
+* React - 18.2
+* Firebase - 10.9.0
+* GoogleMaps react - 2.0.6
+* Bootstrap - 2.10.2 
 
 ## How to configure
 Instructions for setting up 
