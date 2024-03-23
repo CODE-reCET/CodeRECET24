@@ -1,5 +1,5 @@
 import React from "react";
-import Bio from "./biom.jpeg";
+import Bio from "./dim.png";
 import "./firstc.css";
 
 function FirstC() {
@@ -12,10 +12,13 @@ function FirstC() {
         <div className="container overflow-hidden">
           <div className="row gy-3 gy-lg-0 align-items-lg-center justify-content-lg-between">
             <div className="col-12 col-lg-6 order-1 order-lg-0">
-              <h1 className="display-3 fw-bolder mb-3">
+              <h1 className="font2 display-3 fw-bolder mb-3">
                 We design sustainable <br />
                 <mark className="bsb-tpl-highlight bsb-tpl-highlight-blue">
-                  <span className="bsb-tpl-font-hw display-2 text-accent fw-normal">
+                  <span
+                    className="font -2 bsb-tpl-font-hw display-2 text-accent fw-normal"
+                    style={{ fontSize: "50px" }}
+                  >
                     solutions
                   </span>
                 </mark>{" "}
