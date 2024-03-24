@@ -43,7 +43,7 @@ const Navbare = () => {
             <Link to="/community">Membership</Link>
           </li>
           <li>
-            <Link to="/aboutus">About Us</Link>
+            <Link to="/bin">Bin Track</Link>
           </li>
           <li>
             <Link to="/contactus">Contact Us</Link>

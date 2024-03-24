@@ -6,26 +6,27 @@ import Login from './pages/login/Login';
 import Home from './pages/home/Home';
 import Resources from './pages/resources/Resources';
 import Community from './pages/community/Community';
+import Bin from './pages/about/About';
 
 import {
   createBrowserRouter,
   RouterProvider,
- } from "react-router-dom";
-  
- const router = createBrowserRouter([
-   {
+} from "react-router-dom";
+
+const router = createBrowserRouter([
+  {
     path: "/",
     element: <Login />,
-   },
-   {
-     path: "/App",
-     element: <App />,
-   },
-   {
+  },
+  {
+    path: "/App",
+    element: <App />,
+  },
+  {
     path: "/home",
     element: <Home />,
-   },
-   {
+  },
+  {
     path: "/resources",
     element: <Resources />,
   },
@@ -33,9 +34,13 @@ import {
     path: "/community",
     element: <Community />,
   },
-   
- ]);
-  
+  {
+    path: "/bin",
+    element: <Bin />,
+  },
+
+]);
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
