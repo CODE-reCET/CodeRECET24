@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script src="https://cdn.roboflow.com/0.2.26/roboflow.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Player</title>
+</head>
+<body>
+  <div >
+    <video id="video" controls autoplay width="500px"></video>
+    <br>
+    <input type="file" id="file-input" accept="video/*">
+    <button id="start-webcam-btn">Start Webcam</button>
+    <div id="predictions"></div>
+  </div>
+
+  <script type="module">
+    // Import the Firebase SDKs
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-analytics.js";
+    import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-firestore.js";
+    import { getStorage, ref, uploadBytes } from "https://www.gstatic.com/firebasejs/10.9.0/firebase-storage.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyCPpn0y-_4iz9gQeiLDeVjN9elV2XSYuu8",
+        authDomain: "code-recet-db.firebaseapp.com",
+        projectId: "code-recet-db",
+        storageBucket: "code-recet-db.appspot.com",
+        messagingSenderId: "1094581489797",
+        appId: "1:1094581489797:web:e06b22fb21fe690e03d9ec",
+        measurementId: "G-MPKWVP9PY6"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const db = getFirestore(app);
+    const storage = getStorage(app);
+
+    async function runModel(videoElement) {
+      // Load Roboflow and authenticate with your publishable key
+      roboflow.auth({
+        publishable_key: "rf_36oZPt8PqIXSpxiSyAQN7elQyDO2"
+      });
+
+      // Load the model
+      const model = await roboflow.load({
+        model: "coderecet",
+        version: 4 // Specify the version of the model
+      });
+
+      // Configure the model parameters
+      model.configure({
+        threshold: 0.5, // Set detection threshold
+        overlap: 0.5, // Set overlap threshold
+        max_objects: 20 // Set maximum number of objects to detect
+      });
+
+      const predictionsDiv = document.getElementById('predictions');
+
+      const frameInterval = 1000 / 5; // Assuming 5 frames per second
+      let currentTime = 0;
+
+      const processFrames = async () => {
+        if (currentTime >= videoElement.duration) {
+          return;
+        }
+
+        videoElement.currentTime = currentTime;
+        await new Promise(resolve => videoElement.onseeked = resolve);
+
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+
+        canvas.width = videoElement.videoWidth;
+        canvas.height = videoElement.videoHeight;
+        context.drawImage(videoElement, 0, 0);
+
+        // Detect objects in the frame
+        const predictions = await model.detect(canvas);
+        console.log(predictions);
+
+        // Upload frame to Firebase Storage (add error handling)
+        try {
+          const frameRef = ref(storage, `frames/${currentTime}.jpg`);
+          const frameBlob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg'));
+          await uploadBytes(frameRef, frameBlob);
+          console.log("Frame uploaded to Firebase Storage");
+        } catch (error) {
+          console.error("Error uploading frame:", error);
+        }
+
+        // Save predictions to Firestore
+        if (predictions.length !== 0) {
+          savePredictionToFirestore(currentTime, predictions);
+        }
+
+        // Continue to the next frame
+        currentTime += frameInterval / 1000;
+        requestAnimationFrame(processFrames);
+      };
+
+      processFrames();
+    }
+
+    async function savePredictionToFirestore(time, predictions) {
+      try {
+        // Add a new document with a generated ID to the "Prediction" collection
+        await addDoc(collection(db, "Prediction"), {
+          Frame_Time: time,
+          Predictions: predictions
+        });
+        console.log("Prediction data added to Firestore");
+      } catch (error) {
+        console.error("Error adding document: ", error);
+      }
+    }
+
+    document.getElementById('start-webcam-btn').addEventListener('click', startWebcam);
+
+    function startWebcam() {
+      navigator.mediaDevices.getUserMedia({ video: true })
+        .then(stream => {
+          const video = document.getElementById('video');
+          video.srcObject = stream;
+          video.play();
+          runModel(video);
+        })
+        .catch(error => {
+          console.error('Error accessing webcam:', error);
+        });
+    }
+
+    const fileInput = document.getElementById('file-input');
+    fileInput.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+
+      // Validate file type (optional)
+      if (!file.type.startsWith('video/')) {
+        alert('Please select a video file.');
+        return;
+      }
+
+      const url = URL.createObjectURL(file);
+      const video = document.getElementById('video');
+      video.src = url;
+      video.play();
+      runModel(video);
+    });
+  </script>
+</body>
+</html>
