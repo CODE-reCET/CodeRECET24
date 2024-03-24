@@ -15,6 +15,6 @@ predictions for more efficient labeling.
 ## User-Friendly Interface: Provides a visual interface for reviewing model predictions and providing feedback.
 ## Label Storage: Stores correct labels in text files for use in model training.
 ## Feedback Collection: Captures images with incorrect predictions for later analysis or model improvement.
-
+## manually labeled dataset/model https://universe.roboflow.com/lafandar/hack-gagmj
 
 change the path of folder and path too start your journey.
