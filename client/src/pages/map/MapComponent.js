@@ -1,34 +1,27 @@
 import React, { Component } from "react";
-import { Map, GoogleApiWrapper, Marker } from "google-maps-react";
-import "./MapComponent.css"; // Import CSS file for styling
+import { MapContainer, TileLayer, Marker, Popup } from "react-leaflet";
+import "leaflet/dist/leaflet.css";
 
 class MapComponent extends Component {
   render() {
-    const mapStyles = {
-      width: "100%",
-      height: "400px",
-      position: "relative",
-    };
-
-    const { gpsData, google } = this.props;
+    const { gpsData } = this.props;
 
     return (
-      <div className="map-container">
-        {" "}
-        {/* Added className for styling */}
-        <Map
-          google={google}
-          zoom={8}
-          initialCenter={{ lat: 37.7749, lng: -122.4194 }}
-        >
-          {gpsData.map((data, index) => (
-            <Marker
-              key={index}
-              position={{ lat: data.latitude, lng: data.longitude }}
-            />
-          ))}
-        </Map>
-      </div>
+      <MapContainer
+        center={[37.7749, -122.4194]} // Default center coordinates
+        zoom={8}
+        style={{ height: "400px", width: "100%" }}
+      >
+        <TileLayer
+          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+          attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        />
+        {gpsData.map((data, index) => (
+          <Marker key={index} position={[data.latitude, data.longitude]}>
+            <Popup>{`Latitude: ${data.latitude}, Longitude: ${data.longitude}`}</Popup>
+          </Marker>
+        ))}
+      </MapContainer>
     );
   }
 }
@@ -44,13 +37,11 @@ class App extends Component {
   render() {
     return (
       <div>
-        <h1>GPS Data Map</h1>
+        <h1>GPS Data Map with OpenStreetMap (OSM) using react-leaflet</h1>
         <MapComponent gpsData={this.state.gpsData} />
       </div>
     );
   }
 }
 
-export default GoogleApiWrapper({
-  apiKey: "GOOGLE_MAPS_API_KEY",
-})(App);
+export default App;

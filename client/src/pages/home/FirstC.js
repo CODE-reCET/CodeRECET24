@@ -4,7 +4,7 @@ import "./firstc.css";
 
 function FirstC() {
   return (
-    <div className="container">
+    <div className="container" style={{ height: "100vh" }}>
       <section
         id="scrollspyHero"
         className="fcm bsb-hero-2 bsb-tpl-bg-blue py-5 py-xl-8 py-xxl-10"
@@ -25,7 +25,8 @@ function FirstC() {
                 for Biomedical waste disposal.
               </h1>
               <p className="fs-4 mb-5">
-                "Stay safe from infections by using our innovative web app solution."
+                "Stay safe from infections by using our innovative web app
+                solution."
               </p>
               <div className="d-grid gap-2 d-sm-flex">
                 <button
@@ -38,7 +39,6 @@ function FirstC() {
                 <button
                   type="button"
                   className="btn2 btn btn-outline-success bsb-btn-3xl rounded-pill"
-                  
                 >
                   Services
                 </button>
