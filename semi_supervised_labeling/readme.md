@@ -11,7 +11,7 @@ predictions for more efficient labeling.
 
 # Key Features
 
-## Semi-Supervised Labeling: Utilizes a pre-trained YOLO model to generate initial object detections, reducing manual labeling effort.
+## Semi-Supervised Labeling: Utilizes a YOLO model to generate initial object detections using mannual labeling, reducing large manual labeling effort.
 ## User-Friendly Interface: Provides a visual interface for reviewing model predictions and providing feedback.
 ## Label Storage: Stores correct labels in text files for use in model training.
 ## Feedback Collection: Captures images with incorrect predictions for later analysis or model improvement.
