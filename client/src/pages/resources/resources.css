@@ -1,0 +1,10 @@
+.page-container {
+    height: 210px;
+    display: flex;
+    justify-content: center; /* Horizontally center the content */
+    align-items: center; /* Vertically center the content */
+  }
+
+  .space{
+    height: 100px;
+  }

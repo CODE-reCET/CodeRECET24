@@ -1,0 +1,22 @@
+.btn2{
+    border-color: #D9EDBF;
+    color: #000;
+}
+
+.btn2:hover{
+    background-color: #D9EDBF;
+    color: white;
+}
+
+.image{
+    width: 546px;
+  height: auto;
+}
+
+.font2{
+    font-size: 50px;
+}
+
+.fcm{
+    margin-top: 140px;
+}
